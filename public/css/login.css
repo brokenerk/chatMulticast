@@ -1,0 +1,60 @@
+body {
+    background-color: #07889B;
+    font: 200% sans-serif;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 4rem;
+	/*border: 2px solid #ccc;*/
+	align-self: center;
+	justify-content: center;
+  	text-align: center;
+}
+.escom {
+	align-self: center;
+	display: flex;
+	flex: 1;
+	flex-grow: 5;
+}
+.nickName {
+	align-self: center;
+	padding: 2rem;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	flex-grow: 2;
+}
+.label {
+	display: flex;
+	font: 40% sans-serif;
+	color: black;
+	flex-grow: 2;
+}
+.input {
+	padding: 2rem;
+	display: flex;
+	flex-grow: 6;
+	width: 100%;
+}
+button {
+	align-self: center;
+	display: flex;
+	flex: 1;
+	flex-grow: 2;
+	background-color: #66B9BF; /* Green */
+	border: none;
+	border-radius: 20%;
+	color: white;
+	padding: 20px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 21px;
+}

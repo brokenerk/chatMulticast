@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Chat Público</title>
+    <meta http-equiv="Content-Type" content="text/plain"; charset="UTF-8">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/fontAwesome/css/all.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  </head>
+  <body>
+    <!------------------------->
+    <!--------- CHAT ---------->
+    <!------------------------->
+    <div class="container">
+      
+      <!-------------------------->
+      <!---------- Left ---------->
+      <!-------------------------->
+      <div class="left">
+
+          <!------------------------------>
+          <!---------- Mensajes ---------->
+          <!------------------------------>
+          <ul id="messages">
+          </ul>
+
+          <!------------------------------>
+          <!---------- Emojis ------------>
+          <!------------------------------>
+          <div class="emojis-container">
+            <ul id="emojis">
+      
+            </ul>          
+          </div>
+
+          <!------------------------------>
+          <!---------- Texto ------------>
+          <!------------------------------>
+          <div class="texto">
+            <input class="input" id="m" autocomplete="off" placeholder="Escribe un mensaje..." />
+            <button class="b-send" id="enviarMensaje"><i class="fa fa-paper-plane"></i> Enviar</button>  
+            <button class="b-file" id="subir"><i class="fa fa-paperclip"></i> Adjuntar</button>
+          </div>
+
+      </div>
+
+      <!------------------------->
+      <!--------- USER ---------->
+      <!------------------------->
+        <ul id="users">
+        </ul>        
+    </div>
+
+    <script src="/fontAwesome/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/siofu/client.js"></script>
+    <script src="/cliente.js"></script>
+    <script src="/publico.js"></script>
+  
+  </body>
+</html>

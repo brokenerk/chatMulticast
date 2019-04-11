@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entrar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+	<!-------------------------------------------------------->
+	<!------------------- PANEL ENTRAR ----------------------->
+	<!-------------------------------------------------------->
+	<div class="container">
+		<!---------- ESCOM ------------>
+		<div class="escom">
+			<img src="http://www.escom.ipn.mx/images/logoESCOMBlanco.png">
+		</div>
+		<form action="http://localhost:3000/publico" method="GET">
+			<!--------- Nickname ---------->
+			<div class="nickName">
+				<input type="text" name="nickname" id="nickname" class="w3-input w3-animate-input" placeholder="Nickname">
+
+			</div>
+				<!--------- Bandera para indicar si es chat publico/privado ---------->
+				<input type="hidden" name="private" id="private" value="0">
+			<!------- Boton entrar -------->
+			<div>
+				<input type="submit" class="waves-effect waves-light btn green" value="Entrar">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
