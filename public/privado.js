@@ -86,8 +86,8 @@ function privado(socket, rootPath, from, to, uploader) {
   $("#users-private").append($('</li>'));  
   $("#users-private").append($('<li id="'+ from +'" class="users"><i class="fas fa-chevron-circle-right" style="font-size:26px;color:#52de7a"></i><button class="btn-users">' + from + '</button></li>'));
   $("#users-private").append($('<li id="'+ to +'" class="users"><i class="fas fa-chevron-circle-right" style="font-size:26px;color:#52de7a"></i><button class="btn-users">' + to + '</button></li>'));
-  $("#messages-private").append($("<li>").text(from + " bienvenido a la sala privada")); 
-  $("#messages-private").append($("<li>").text(to + " se ha unido a la sala privada")); 
+  $("#messages-private").append($("<li>").text(from + " bienvenid@ a la sala privada " + String.fromCodePoint(emojis[2]))); 
+  $("#messages-private").append($("<li>").text(to + " se ha unido a la sala privada " + String.fromCodePoint(emojis[57]))); 
   ajustarScroll()
   
   cargarEmojisPrivados();
@@ -181,6 +181,7 @@ function privado(socket, rootPath, from, to, uploader) {
           to: to
         }); 
         $("#messages-private").append($(msjFile)); 
+        ajustarScroll();
       }    
 
       var msjFile = '<li>' + from + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';      
@@ -189,7 +190,7 @@ function privado(socket, rootPath, from, to, uploader) {
         to: to
       });
       $("#messages-private").append($(msjFile)); 
-      ajustarScroll()
+      ajustarScroll();
     }
   });
 
@@ -203,7 +204,7 @@ function privado(socket, rootPath, from, to, uploader) {
   socket.on("user leaves", function(leaver){
     console.log("Usuario abandono: " + leaver);
     $("#" + leaver).remove();
-    $("#messages-private").append($("<li style=background:#52de7a;>").text(leaver + " ha abandonado la sala privada."));
+    $("#messages-private").append($("<li style=background:#52de7a;>").text(leaver + " ha abandonado la sala privada " + String.fromCodePoint(emojis[40])));
     ajustarScroll()      
   });
 } 

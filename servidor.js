@@ -21,7 +21,7 @@ app.get('/privado', function(req, res){
 });
 
 server.listen(process.env.PORT || 3003, () => {
- console.log("server started at port 3003");
+ console.log("Servidor iniciado en localhost:3003");
 });
 
 var usersOnline = [];
@@ -90,6 +90,7 @@ io.on("connection", function(socket) {
 			console.log(socket.nickname + " abandono una sala privada. Privado = " + socket.privado);
 			
 			socket.broadcast.emit("user leaves", socket.nickname);
+			socket.broadcast.emit("enable user", socket.nickname);
 		}
 		else {
 			console.log(socket.nickname + " desconectado. Privado = " + socket.privado);

@@ -7,6 +7,22 @@ body {
     justify-content: center;
 }
 
+.btn-submit {
+	align-self: center;
+	display: flex;
+	flex: 1;
+	flex-grow: 2;
+	background-color: #66B9BF; /* Green */
+	border: none;
+	border-radius: 5%;
+	color: white;
+	padding: 20px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 21px;
+}
+
 .container {
 	display: flex;
 	flex: 1;

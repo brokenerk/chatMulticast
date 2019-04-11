@@ -132,11 +132,11 @@
 
 #messages-private li:nth-child(odd) { 
 	color: white;
-	background: #a3c2c2; 
+	background: #4db6ac; 
 }
 
 #messages-private a{
-	color: #80cbc4;
+	color: #ef5350;
 }
 
 #li-barra {

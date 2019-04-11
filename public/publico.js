@@ -53,14 +53,22 @@
       '0x1F499',
       '0x1F4AF',
       '0x1F44C'];
+  var usersPrivado = ['init'];
 
 /************************************************************************/
 /*                         ABRIR SALA PRIVADA                          */
 /**********************************************************************/
 function abrirSalaPrivada(rootPath, from, to) {
-  var newRoom = window.open(rootPath + "privado/?private=1&from=" + from +"&to=" + to, "_blank");
-  if (!newRoom) 
-    alert('Por favor active los pop-ups del navegador');
+  if(jQuery.inArray(to, usersPrivado) == -1){
+    usersPrivado.push(to);
+    var newRoom = window.open(rootPath + "privado/?private=1&from=" + from +"&to=" + to, "_blank");
+    if (!newRoom) 
+      alert('Por favor active los pop-ups del navegador');
+  }
+  else{
+    console.log("Chat privado con: " + to + " ya existe.")
+  }
+  
 }
 
 /************************************************************************/
@@ -169,7 +177,7 @@ function publico(socket, rootPath, nickname, uploader) {
   socket.on("user disconnected", function(nickname) {
     console.log("Usuario: " + nickname + " desconectado");
 
-    $("#messages").append($("<li style=background:#52de7a;>").text(nickname + " se ha desconectado" + String.fromCodePoint(emojis[40])));
+    $("#messages").append($("<li style=background:#52de7a;>").text(nickname + " se ha desconectado " + String.fromCodePoint(emojis[40])));
     $("#" + nickname).remove();
 
     numUsers--;   
@@ -180,6 +188,12 @@ function publico(socket, rootPath, nickname, uploader) {
 
     ajustarScroll();  
   });
+
+  socket.on("enable user", function(user){
+    console.log("Usuario: " + user + " habiliado para privado.");
+
+    usersPrivado.splice(usersPrivado.indexOf(user), 1);
+  })
 
   // Recibe del servidor los mensajes de otros clientes
   socket.on("chat message", function(data) {
@@ -268,6 +282,7 @@ $(document).on("click", ".btn-users", function() {
         socket.emit("chat file", msjFile);
         console.log("Envio mi imagen a MOSTRAR CHAT YA SE ENVIO SEGUN"); 
         $("#messages").append($(msjFile));
+        ajustarScroll();
       }    
       
       var msjFile = '<li>' + nickname + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';
