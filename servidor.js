@@ -20,8 +20,8 @@ app.get('/privado', function(req, res){
   res.sendFile(__dirname + "/public/privado.html");
 });
 
-server.listen(3000, function() {
-	console.log("Servidor iniciado en: http://localhost:3000");
+server.listen(process.env.PORT || 3003, () => {
+ console.log("server started at port 3003");
 });
 
 var usersOnline = [];
