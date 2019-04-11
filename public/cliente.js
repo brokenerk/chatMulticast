@@ -1,5 +1,5 @@
 $(function () {
-  var rootPath = "http://localhost:3000/";
+  var rootPath = "https://chat-multicast.herokuapp.com/";
   var socket = io();
   // ---------------------- SUBIR ARCHIVOS
   var uploader = new SocketIOFileUpload(socket);
