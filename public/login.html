@@ -7,8 +7,9 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="./css/login.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="/js/validetta/validetta.min.css">
+	<link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 	<!-------------------------------------------------------->
@@ -19,10 +20,10 @@
 		<div class="escom">
 			<img src="http://www.escom.ipn.mx/images/logoESCOMBlanco.png">
 		</div>
-		<form action="publico" method="GET">
+		<form action="publico" method="GET" id = "formNickname">
 			<!--------- Nickname ---------->
 			<div class="nickName">
-				<input type="text" name="nickname" id="nickname" class="w3-input w3-animate-input" placeholder="Ingrese un nickname...">
+				<input type="text" name="nickname" id="nickname" class="w3-input w3-animate-input" placeholder="Ingrese un nickname..." data-validetta="required">
 
 			</div>
 				<!--------- Bandera para indicar si es chat publico/privado ---------->
@@ -33,5 +34,10 @@
 			</div>
 		</form>
 	</div>
+
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/validetta/validetta.min.js"></script>
+	<script src="/js/validetta/validettaLang-es-ES.js"></script>
+	<script src="/login.js"></script>
 </body>
 </html>
