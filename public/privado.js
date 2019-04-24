@@ -174,22 +174,25 @@ function privado(socket, rootPath, from, to, uploader) {
         }
       }
       console.log("extension: " + aux);
-      if(aux === ".PNG" || aux == ".jpg" || aux == ".png" || aux == ".jpeg" || aux == ".JPEG") {
-        var msjFile = '<li>' + from + ': ' + '<img class = "imagen-chat" src="' + rootPath + 'uploads/' + nombre + '"></li>';
+
+      if(aux === ".PNG" || aux == ".jpg" || aux == ".JPG" || aux == ".png" || aux == ".jpeg" || aux == ".JPEG") {
+        var ancho = $(window).width() * 0.2;
+        var msjFile = '<li>' + from + ': ' + '<img class = "imagen-chat" src="' + rootPath + 'uploads/' + nombre + '" width="' + ancho + '"></li>';
         socket.emit("private chat file", {
           link: msjFile,
           to: to
         }); 
         $("#messages-private").append($(msjFile)); 
-        ajustarScroll();
       }    
+      else{
+        var msjFile = '<li>' + from + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';      
+        socket.emit("private chat file", {
+          link: msjFile,
+          to: to
+        });
+        $("#messages-private").append($(msjFile)); 
+      }
 
-      var msjFile = '<li>' + from + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';      
-      socket.emit("private chat file", {
-        link: msjFile,
-        to: to
-      });
-      $("#messages-private").append($(msjFile)); 
       ajustarScroll();
     }
   });

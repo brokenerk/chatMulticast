@@ -7,17 +7,8 @@
                 '0x1F61D', '0x1F911', '0x1F917', '0x1F92D', '0x1F92B', '0x1F914', '0x1F910', '0x1F928',
                 '0x1F611', '0x1F636', '0x1F60F', '0x1F612', '0x1F644', '0x1F62C', '0x1F925', '0x1F60C',
                 '0x1F614', '0x1F62A', '0x1F924', '0x1F634', '0x1F637', '0x1F912', '0x1F915', '0x1F922',
-                '0x1F92E', '0x1F927', '0x1F635', '0x1F92F', '0x1F920', '0x1F60E',
-      '0x1F913',
-      '0x1F9D0',
-      '0x2639',
-      '0x1F62E',
-      '0x1F632',
-      '0x1F633',
-      '0x1F626',
-      '0x1F627',
-      '0x1F628',
-      '0x1F630',
+                '0x1F92E', '0x1F927', '0x1F635', '0x1F92F', '0x1F920', '0x1F60E', '0x1F913', '0x1F9D0',
+                '0x2639', '0x1F62E', '0x1F632', '0x1F633', '0x1F626', '0x1F627', '0x1F628', '0x1F630',
       '0x1F625',
       '0x1F622',
       '0x1F62D',
@@ -53,6 +44,7 @@
       '0x1F499',
       '0x1F4AF',
       '0x1F44C'];
+
   var usersPrivado = ['init'];
 
 /************************************************************************/
@@ -276,18 +268,19 @@ $(document).on("click", ".btn-users", function() {
         }
       }
       console.log("extension: " + aux);
-      if(aux === ".PNG" || aux == ".jpg" || aux == ".png" || aux == ".jpeg" || aux == ".JPEG") {
-        var msjFile = '<li>' + nickname + ': ' + '<img class = "imagen-chat" src="' + rootPath + 'uploads/' + nombre + '"></li>';
+      if(aux === ".PNG" || aux == ".jpg" || aux == ".JPG" || aux == ".png" || aux == ".jpeg" || aux == ".JPEG") {
+      	var ancho = $(window).width() * 0.2;
+        var imagenFile = '<li>' + nickname + ': ' + '<img class = "imagen-chat" src="' + rootPath + 'uploads/' + nombre + '" width="' + ancho + '"></li>';
         console.log("Envio mi imagen a MOSTRAR CHAT");
-        socket.emit("chat file", msjFile);
-        console.log("Envio mi imagen a MOSTRAR CHAT YA SE ENVIO SEGUN"); 
-        $("#messages").append($(msjFile));
-        ajustarScroll();
-      }    
-      
-      var msjFile = '<li>' + nickname + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';
-      socket.emit("chat file", msjFile);
-      $("#messages").append($(msjFile)); 
+        socket.emit("chat file", imagenFile);
+        $("#messages").append($(imagenFile));
+        //ajustarScroll();
+      }
+      else{
+		var msjFile = '<li>' + nickname + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';
+		socket.emit("chat file", msjFile);
+		$("#messages").append($(msjFile)); 
+      } 
       ajustarScroll();
     }
   });
