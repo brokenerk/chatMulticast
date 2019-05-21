@@ -1,7 +1,7 @@
 /************************************************************************/
 /*                            EMOJIS                                   */
 /**********************************************************************/
-  let emojis = ['0x1F600', '0x1F603', '0x1F604', '0x1F601', '0x1F606', '0x1F605', '0x1F923', '0x1F602',
+let emojis = ['0x1F600', '0x1F603', '0x1F604', '0x1F601', '0x1F606', '0x1F605', '0x1F923', '0x1F602',
                 '0x1F642', '0x1F643', '0x1F609', '0x1F60A', '0x1F607', '0x1F60D', '0x1F929', '0x1F618',
                 '0x1F617', '0x1F61A', '0x1F619', '0x1F60B', '0x1F61B', '0x1F61C', '0x1F92A', '0x1F610',
                 '0x1F61D', '0x1F911', '0x1F917', '0x1F92D', '0x1F92B', '0x1F914', '0x1F910', '0x1F928',
@@ -9,43 +9,12 @@
                 '0x1F614', '0x1F62A', '0x1F924', '0x1F634', '0x1F637', '0x1F912', '0x1F915', '0x1F922',
                 '0x1F92E', '0x1F927', '0x1F635', '0x1F92F', '0x1F920', '0x1F60E', '0x1F913', '0x1F9D0',
                 '0x2639', '0x1F62E', '0x1F632', '0x1F633', '0x1F626', '0x1F627', '0x1F628', '0x1F630',
-      '0x1F625',
-      '0x1F622',
-      '0x1F62D',
-      '0x1F631',
-      '0x1F616',
-      '0x1F623',
-      '0x1F61E',
-      '0x1F613',
-      '0x1F629',
-      '0x1F62B',
-      '0x1F624',
-      '0x1F621',
-      '0x1F620',
-      '0x1F92C',
-      '0x1F608',
-      '0x1F47F',
-      '0x1F480',
-      '0x2620',
-      '0x1F4A9',
-      '0x1F47D',
-      '0x1F648',
-      '0x1F649',
-      '0x1F64A',
-      '0x1F496',
-      '0x1F497',
-      '0x1F493',
-      '0x1F49E',
-      '0x1F495',
-      '0x1F494',
-      '0x2764',
-      '0x1F49B',
-      '0x1F49A',
-      '0x1F499',
-      '0x1F4AF',
-      '0x1F44C'];
-
-  var usersPrivado = ['init'];
+                '0x1F625', '0x1F622', '0x1F62D', '0x1F631', '0x1F616', '0x1F623', '0x1F61E', '0x1F613',
+                '0x1F629', '0x1F62B', '0x1F624', '0x1F621', '0x1F620', '0x1F92C', '0x1F608', '0x1F47F',
+                '0x1F480', '0x2620', '0x1F4A9', '0x1F47D', '0x1F648', '0x1F649', '0x1F64A', '0x1F496',
+                '0x1F497', '0x1F493', '0x1F49E', '0x1F495', '0x1F494', '0x2764', '0x1F49B', '0x1F49A', 
+                '0x1F499', '0x1F4AF', '0x1F44C'];
+var usersPrivado = ['init'];
 
 /************************************************************************/
 /*                         ABRIR SALA PRIVADA                          */
@@ -241,7 +210,6 @@ $(document).on("click", ".btn-users", function() {
     console.log("Nombre: " + nombre);
     console.log("Tam: " + tam);
     console.log("Subiendo: " + porcentaje + "%");
-    /* --------------- AQUI HAY QUE APLICAR CSS (ALERT O CUADRO DE DIALOGO PARA TENER ENTRETENIDO AL CLIENTE)*/
     $("#messages").append($("<li>").text("Enviando " + nombre + " de " + tam + " bytes: " + porcentaje + "%"));      
    
     ajustarScroll(); 
@@ -277,9 +245,9 @@ $(document).on("click", ".btn-users", function() {
         //ajustarScroll();
       }
       else{
-		var msjFile = '<li>' + nickname + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';
-		socket.emit("chat file", msjFile);
-		$("#messages").append($(msjFile)); 
+    		var msjFile = '<li>' + nickname + ': ' + '<a href="' + rootPath + 'uploads/' + nombre + '" download>' + nombre + '. ' + tam + ' bytes</a></li>';
+    		socket.emit("chat file", msjFile);
+    		$("#messages").append($(msjFile)); 
       } 
       ajustarScroll();
     }
