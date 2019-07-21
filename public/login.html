@@ -15,15 +15,22 @@
 	<!-------------------------------------------------------->
 	<!------------------- PANEL ENTRAR ----------------------->
 	<!-------------------------------------------------------->
+
+	<ul>
+		<li>Chat Multicast</li>
+	</ul>
+
+	<br><br>
+
 	<div class="container">
-		<!---------- ESCOM ------------>
-		<div class="escom">
-			<img src="http://www.escom.ipn.mx/images/logoESCOMBlanco.png">
-		</div>
+		
+		<br><br><br>
 		<form action="publico" method="GET" id = "formNickname">
 			<!--------- Nickname ---------->
+			<label>Ingrese un nickname</label>
 			<div class="nickName">
-				<input type="text" name="nickname" id="nickname" class="w3-input w3-animate-input" placeholder="Ingrese un nickname..." data-validetta="required">
+
+				<input type="text" name="nickname" id="nickname" class="w3-input w3-animate-input" placeholder="anon" data-validetta="required">
 
 			</div>
 				<!--------- Bandera para indicar si es chat publico/privado ---------->
@@ -34,6 +41,15 @@
 			</div>
 		</form>
 	</div>
+
+		<!-- Footer -->
+	<footer>
+		<div class="container">
+	  		<p>Dev by Abigail Nicolas and Enrique Ramos. Copyright 2019</p>
+		</div>
+	</footer>
+
+
 
 	<script src="/js/jquery-3.3.1.min.js"></script>
 	<script src="/js/validetta/validetta.min.js"></script>

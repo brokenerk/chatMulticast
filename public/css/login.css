@@ -1,9 +1,16 @@
+html { 
+	height: 100%; 
+	margin: 0; 
+}
+
 body {
     background-color: #07889B;
     font: 200% sans-serif;
+    height: 100%; 
+    margin: 0;
     display: flex;
     flex: 1;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -14,9 +21,8 @@ body {
 	flex-grow: 2;
 	background-color: #66B9BF; /* Green */
 	border: none;
-	border-radius: 5%;
 	color: white;
-	padding: 20px 40px;
+	padding: 12px 200px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -27,50 +33,66 @@ body {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	padding: 4rem;
 	/*border: 2px solid #ccc;*/
 	align-self: center;
-	justify-content: center;
   	text-align: center;
 }
+
 .escom {
 	align-self: center;
 	display: flex;
 	flex: 1;
 	flex-grow: 5;
 }
+
 .nickName {
 	align-self: center;
-	padding: 2rem;
+	padding: 10px 0px;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	flex-grow: 2;
+	font: 80% sans-serif;
+}
+
+label {
+	align-self: left;
+	font: 80% sans-serif;
+	color: white;
 	display: flex;
 	flex-direction: row;
 	flex: 1;
 	flex-grow: 2;
 }
-.label {
-	display: flex;
-	font: 40% sans-serif;
-	color: black;
-	flex-grow: 2;
-}
-.input {
-	padding: 2rem;
-	display: flex;
-	flex-grow: 6;
-	width: 100%;
-}
-button {
-	align-self: center;
-	display: flex;
-	flex: 1;
-	flex-grow: 2;
-	background-color: #66B9BF; /* Green */
-	border: none;
-	border-radius: 20%;
+
+p {
+	font: 50% sans-serif;
 	color: white;
-	padding: 20px 40px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 21px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #066674;
+}
+
+li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin: 0;
+}
+
+footer{
+  margin-top: auto; 
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #066674;
 }
