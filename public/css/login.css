@@ -16,17 +16,14 @@ body {
 
 .btn-submit {
 	align-self: center;
-	display: flex;
-	flex: 1;
-	flex-grow: 2;
 	background-color: #66B9BF; /* Green */
 	border: none;
 	color: white;
-	padding: 12px 200px;
+	padding: 12px 120px;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
 	font-size: 21px;
+	width: 100%;
 }
 
 .container {
@@ -38,21 +35,15 @@ body {
   	text-align: center;
 }
 
-.escom {
-	align-self: center;
-	display: flex;
-	flex: 1;
-	flex-grow: 5;
-}
-
 .nickName {
 	align-self: center;
-	padding: 10px 0px;
 	display: flex;
 	flex-direction: row;
 	flex: 1;
 	flex-grow: 2;
 	font: 80% sans-serif;
+	padding: 12px 0px;
+	width: 100%;
 }
 
 label {
@@ -83,7 +74,7 @@ li {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 30px;
   text-decoration: none;
   margin: 0;
 }
